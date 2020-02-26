@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <h2>My Todos</h2>
+  <table>
+    <ng-container *ngFor="let todo of todos">
+      <tr>
+        <td>{{todo.name}}</td>
+        <td>{{todo.desc}}</td>
+      </tr>
+    </ng-container>
+  </table>
+</div>
+
+<router-outlet></router-outlet>
