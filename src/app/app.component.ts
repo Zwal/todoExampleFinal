@@ -1,30 +1,25 @@
 import {Component, OnInit} from '@angular/core';
-import {Todo} from "./models/todo.model";
+import {Todo} from './models/todo.model';
+import {APIService} from './API.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   title = 'totdoExample';
-  todos: Todo[];
+  todos: Todo[] = [];
 
-  constructor() {
+  constructor(private apiService: APIService) {
   }
 
   ngOnInit() {
-    this.todos = [
-      {
-        id: 'UUID1',
-        name: 'Todo1',
-        desc: 'Description1'
-      },
-      {
-        id: 'UUID2',
-        name: 'Todo2',
-        desc: 'Description2'
-      }
-    ];
+    this.apiService.ListToDos().then(
+      value => {
+          value.items.forEach(item => {
+            this.todos.push(item);
+          });
+        });
   }
 }

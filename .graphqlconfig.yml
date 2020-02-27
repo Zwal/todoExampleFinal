@@ -1,0 +1,15 @@
+projects:
+  Todo API:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: angular
+        generatedFileName: src/app/API.service.ts
+        docsFilePath: src/graphql
+        region: eu-central-1
+        apiId: xjl4g3dbmza2pkrj3axd2hqc2y
+        maxDepth: 2

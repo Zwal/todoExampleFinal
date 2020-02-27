@@ -1,0 +1,22 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateToDos($id: String, $name: String, $desc: String) {
+  onCreateToDos(id: $id, name: $name, desc: $desc) {
+    id
+    name
+    desc
+  }
+}
+subscription OnUpdateToDos($id: String, $name: String, $desc: String) {
+  onUpdateToDos(id: $id, name: $name, desc: $desc) {
+    id
+    name
+    desc
+  }
+}
+subscription OnDeleteToDos($id: String, $name: String, $desc: String) {
+  onDeleteToDos(id: $id, name: $name, desc: $desc) {
+    id
+    name
+    desc
+  }
+}
